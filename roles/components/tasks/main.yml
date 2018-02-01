@@ -1,0 +1,18 @@
+---
+- name: Update
+  apt: update_cache=yes
+
+- name: Install required components
+  apt: name={{ item }} state=present
+  sudo: yes
+  with_items:
+    - apache2
+    - mysql-server
+    - php5-mysql
+    - php5
+    - libapache2-mod-php5
+    - php5-mcrypt
+    - php5-gd
+    - libssh2-php
+    - python-mysqldb 
+# tasks file for components
